@@ -25,19 +25,6 @@ function sin_to_hex(i, phase) {
 let place = 0;
 var servers = {};
 
-function play(connection, message) {
-  var server = servers[message.guild.id];
-
-  server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
-
-  server.queue.shift();
-   
-  server.dispatcher.on("end", function () {
-    if (server.queue[0]) play (connection, message);
-    else connection.disconnect();
-  });
-}
-
 function changeColor() {
   for (let index = 0; index < 1; ++index) {		
     bot.guilds.get("367266060833128448").roles.find('name', "Rainbow").setColor(rainbow[place])
