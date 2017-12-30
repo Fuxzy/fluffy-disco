@@ -40,8 +40,7 @@ function play(connection, message) {
 
 function changeColor() {
   for (let index = 0; index < 1; ++index) {		
-    bot.guilds.get("395216948469694466").roles.find('name', "Vice Chairman").setColor(rainbow[place])
-    bot.guilds.get("395216948469694466").roles.find('name', "Chairman").setColor(rainbow[place])
+    bot.guilds.get("395216948469694466").roles.find('name', "Rainbow").setColor(rainbow[place])
 		.catch(console.error);
 		
     if(place == (size - 1)){
